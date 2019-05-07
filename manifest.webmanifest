@@ -1,11 +1,11 @@
 {
-  "name": "pwa-app",
-  "short_name": "pwa-app",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "US",
+  "short_name": "US",
+  "theme_color": "#4D4D4D",
+  "background_color": "#4D4D4D",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/US-TEST/dist/US/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",

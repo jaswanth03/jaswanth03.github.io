@@ -2,19 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>PwaApp</title>
-  <base href="/">
-  <!-- to test in yebelo.com-->
-  <!---->
-  <!--<base href="/zpwa-test/dist/pwa-app/">-->
+  <title>US</title>
+  <base href="/#/">
+  <!-- for https in yebelo.com-->
+  <!--<base href="/US-TEST/dist/US/">-->
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--for us production uncomment it-->
+  <!--<base href="/backendless_io/user/US/dist/US/">-->
+
+  <!--for testing the dist folder path is this-->
+  <!--<base href="/backendless_io/user/US-TEST-TEST/dist/US/">-->
+  <!--for the test-->
+  <!--<base href="/backendless_io/user/US-TEST/dist/US/">-->
+
+  <!--<base href="/backendless_io/user/US-INTERNAL/dist/US/">-->
+
+  <!--<base href="/home/angular/dist/US/">-->
+
+  <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, minimum-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--importing the fontawesome from the local assets folder.-->
+  <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
+
+  <link rel="manifest" href="manifest.json">
+
+  <!--for multi language flag icons.-->
+  <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">-->
+
+  <!--link for the accessing the fontawesome code from the internet.-->
+  <!--<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"-->
+          <!--integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"-->
+          <!--crossorigin="anonymous"></script>-->
+
+
+
+  <!--<script type="text/javascript" src="libs/jquery.slimscroll.min.js"></script>-->
+
   <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#1976d2">
-<link rel="stylesheet" href="styles.3ff695c00d717f2d2a11.css"></head>
+  <meta name="theme-color" content="#4D4D4D">
+<link rel="stylesheet" href="styles.722b1ff879d08c87444d.css"></head>
 <body>
-  <app-root></app-root>
+  <us-root></us-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
-<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.9d3a8743be9f041e6ba8.js"></script><script type="text/javascript" src="main.e8a2ac1d41afdd40bdc4.js"></script></body>
+
+  <!-- for IRMA -->
+  <script type="text/javascript" src="assets/js/irma.js" defer></script>
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js" ></script>
+
+  <!--<script>
+      navigator.serviceWorker
+          .register('/firebase-messaging-sw.js')
+          .then((registration) => {
+              firebase.messaging().useServiceWorker(registration);
+          });
+  </script>-->
+<script type="text/javascript" src="runtime.92077a6a2163014b9bae.js"></script><script type="text/javascript" src="polyfills.b6ff5dbc46d432ea5d73.js"></script><script type="text/javascript" src="scripts.54b900d40a93171431d6.js"></script><script type="text/javascript" src="main.44a20187c38a68d23e05.js"></script></body>
 </html>
