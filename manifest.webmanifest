@@ -1,11 +1,11 @@
 {
   "name": "US",
   "short_name": "US",
-  "theme_color": "#4D4D4D",
-  "background_color": "#4D4D4D",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/#/",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
