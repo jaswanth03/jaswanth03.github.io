@@ -1882,15 +1882,7 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             this.scope.addEventListener('fetch', (event) => this.onFetch(event));
             this.scope.addEventListener('message', (event) => this.onMessage(event));
             this.scope.addEventListener('push', (event) => this.onPush(event));
-            // this.scope.addEventListener('notificationclick', (event) => this.onClick(event));
-
-            this.scope.addEventListener('notificationclick', (event) => {
-                console.log('[Service Worker] Notification click Received. event', event);
-                event.notification.close();
-                if (clients.openWindow') {
-                    event.waitUntil(clients.openWindow('https://yebelo.com/US/dist/US/#/dash/dashboard'));
-                }
-            });
+            this.scope.addEventListener('notificationclick', (event) => this.onClick(event));
 
             // The debugger generates debug pages in response to debugging requests.
             this.debugger = new DebugHandler(this, this.adapter);
