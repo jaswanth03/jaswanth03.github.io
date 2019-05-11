@@ -156,7 +156,10 @@
     "REGION": "Regio",
     "COUNTRY": "land",
     "CHANGE-PASSWORD": "Wachtwoord wijzigen?",
-    "SAVE-PROFILE": "Profiel opslaan"
+    "SAVE-PROFILE": "Profiel opslaan",
+    "ZIP-CODE-EMPTY" : "Je moet postcode invullen",
+    "HOUSE-NUMBER-EMPTY" : "Je moet House geen vullen",
+    "ZIP-CODE-HOUSE-NUMBER-EMPTY" : "Je moet postcode en huisnr vullen"
   },
   "MY-CONSENTS": {
     "MY-CONSENTS-TITLE": "Mijn toestemming",
@@ -311,6 +314,23 @@
     "U_114": "Loginid is niet geldig",
     "U_115": "LoginID groter dan of gelijk aan 5 karakters en kleiner dan of gelijk aan 50 tekens",
     "U_116": "Toegangscode moet gelijk zijn aan 8 cijfers bestaan",
+    "U_117": "Voornaam groter dan of gelijk aan 3 tekens en kleiner dan of gelijk aan 25 karakters",
+    "U_118": "Mobile moet kleiner dan of gelijk aan 12 cijfers zijn",
+    "U_119": "AddressNo moet lager dan of gelijk aan 5 tekens",
+    "U_120": "AddressSuffix moet lager dan of gelijk aan 2 tekens",
+    "U_121": "AddressLine1 moet lager dan of gelijk aan 25 karakters",
+    "U_122": "AddressLine2 moet lager dan of gelijk aan 25 karakters",
+    "U_123": "Regio moet kleiner dan of gelijk aan 20 tekens",
+    "U_124": "CountryCode moet gelijk zijn aan 2 of 3 karakters",
+    "U_125": "Geslacht moet F / M / O te",
+    "U_126": "Ongeldige geboortedatum",
+    "U_127": "Gebruikers-id mag niet leeg zijn",
+    "U_128": "User ID moet precies 8 tekens",
+    "U_129": "Token cannot be empty",
+    "U_130": "Token must be less than or equal to 200 characters",
+    "U_131": "AddressLine3 must be less than or equal to 25 characters",
+    "U_132": "Zip Code moet kleiner dan of gelijk aan 10 tekens",
+
 
     "U_201": "Gebruiker bestaat niet",
     "U_202": "Gebruiker is permanent geblokkeerd",
@@ -318,7 +338,9 @@
     "U_204": "Passcode verlopen",
     "U_205": "Passcode Mismatch",
     "U_206": "Gebruiker niet gevonden",
-    "U_207": "Gebruiker bestaat al"
+    "U_207": "Gebruiker bestaat al",
+
+    "400": "Combinatie van postcode en huisnummer niet bestaat"
   },
   "LOGIN-SERVICE-ERROR-CODES": {
     "U_001": "Interne Server Fout",

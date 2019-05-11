@@ -153,7 +153,10 @@
     "REGION": "Region",
     "COUNTRY": "Country",
     "CHANGE-PASSWORD": "Change password?",
-    "SAVE-PROFILE": "Save Profile"
+    "SAVE-PROFILE": "Save Profile",
+    "ZIP-CODE-EMPTY" : "You have to fill Zip code",
+    "HOUSE-NUMBER-EMPTY" : "You have to fill House no",
+    "ZIP-CODE-HOUSE-NUMBER-EMPTY" : "You have to fill Zip code and House no"
   },
   "MY-CONSENTS": {
     "MY-CONSENTS-TITLE": "My Consents",
@@ -306,13 +309,32 @@
     "U_114": "LoginId is not valid",
     "U_115": "LoginId must be greater than or equal to 5 characters and less than or equal to 50 characters",
     "U_116": "Passcode must be equal to 8 digits",
+    "U_117": "First name must be greater than or equal to 3 characters and less than or equal to 25 characters",
+    "U_118": "Mobile must be less than or equal to 12 digits ",
+    "U_119": "AddressNo must be less than or equal to 5 characters ",
+    "U_120": "AddressSuffix must be less than or equal to 2 characters ",
+    "U_121": "AddressLine1 must be less than or equal to 25 characters ",
+    "U_122": "AddressLine2 must be less than or equal to 25 characters ",
+    "U_123": "Region must be less than or equal to 20 characters ",
+    "U_124": "CountryCode must be equal to 2 or 3 characters ",
+    "U_125": "Gender must be F/M/O ",
+    "U_126": "Invalid Birth Date",
+    "U_127": "User ID cannot be empty",
+    "U_128": "User ID must be exactly 8 characters",
+    "U_129": "Token cannot be empty",
+    "U_130": "Token must be less than or equal to 200 characters",
+    "U_131": "AddressLine3 must be less than or equal to 25 characters",
+    "U_132": "Zip Code must be less than or equal to 10 characters",
+
     "U_201": "User does not exist",
     "U_202": "User is blocked permanently",
     "U_203": "User is blocked",
     "U_204": "Passcode Expired",
     "U_205": "Passcode Mismatch",
     "U_206": "User Not Found",
-    "U_207": "User already exists"
+    "U_207": "User already exists",
+
+    "400": "Combination of Zip code and House number does not exist"
   },
   "LOGIN-SERVICE-ERROR-CODES": {
     "U_001": "Internal Server Error",
