@@ -228,7 +228,7 @@
     "NEED-HELP": "Need help",
     "IS-VALID": "Is Valid",
     "REPORT-FRAUD": "Report as Fraud",
-    "CANCLE": "Cancle",
+    "CANCLE": "Cancel",
     "SUBMIT": "Submit",
     "COMMENTS": "Comments",
     "MODEL-FRAUD-REPORTING": "Fraud Reporting",
@@ -263,7 +263,7 @@
   },
   "TODO": {
     "TO-DO-TITLE": "To-Do",
-    "TO-DO-INFO": "By clearing Open Items you will better protect yourself against",
+    "TO-DO-INFO": "By clearing Open Items you will better protect yourself against ",
     "TO-DO-TODAY": "Today",
     "IDENTITY-FRAUD": "Identity Fraud",
     "TO-DO-UPCOMING": "Up coming to-do's"
