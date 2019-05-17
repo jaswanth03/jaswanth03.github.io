@@ -1982,7 +1982,25 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
         }
         onClick(event) {
             // Handle the click event and keep the SW alive until it's handled.
-            event.waitUntil(this.handleClick(event.notification, event.action));
+            let url = 'https://upfrontsecurity.github.io/#/home/alertDetails';
+            event.notification.close(); // Android needs explicit close.
+            event.waitUntil(
+                clients.matchAll({type: 'window'}).then( windowClients => {
+                    // Check if there is already a window/tab open with the target URL
+                    for (var i = 0; i < windowClients.length; i++) {
+                        var client = windowClients[i];
+                        // If so, just focus it.
+                        if (client.url === url && 'focus' in client) {
+                            return client.focus();
+                        }
+                    }
+                    // If not, then open the target URL in a new window/tab.
+                    if (clients.openWindow) {
+                        return clients.openWindow(url);
+                    }
+                })
+            );
+            // event.waitUntil(this.handleClick(event.notification, event.action));
         }
         handleMessage(msg, from) {
             return __awaiter$5(this, void 0, void 0, function* () {
