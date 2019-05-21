@@ -1981,11 +1981,8 @@ ${msgIdle}`, { headers: this.adapter.newHeaders({ 'Content-Type': 'text/plain' }
             msg.waitUntil(this.handlePush(msg.data.json()));
         }
         onClick(event) {
-            event.notification.close();
-
-            event.waitUntil(
-                clients.openWindow('https://jaswanth03.github.io')
-            );
+            // Handle the click event and keep the SW alive until it's handled.
+            event.waitUntil(this.handleClick(event.notification, event.action));
         }
         handleMessage(msg, from) {
             return __awaiter$5(this, void 0, void 0, function* () {
