@@ -1,64 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>US</title>
-  <base href="/#/">
-  <!-- for https in yebelo.com-->
-  <!--<base href="/US/dist/US/">-->
-
-  <!--PWA test-->
-
-  <!--<base href="/zpwa-test/US-TEST-TEST/dist/US/">-->
-
-  <!--for us production uncomment it-->
-  <!--<base href="/backendless_io/user/US/dist/US/">-->
-
-  <!--for testing the dist folder path is this-->
-  <!--<base href="/backendless_io/user/US-TEST-TEST/dist/US/">-->
-  <!--for the test-->
-  <!--<base href="/backendless_io/user/US-TEST/dist/US/">-->
-
-  <!--<base href="/backendless_io/user/US-INTERNAL/dist/US/">-->
-
-  <!--<base href="/home/angular/dist/US/">-->
-
-  <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, minimum-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!--importing the fontawesome from the local assets folder.-->
-  <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/all.css">
-
-  <meta name="theme-color" content="#4D4D4D">
-
-  <!--for multi language flag icons.-->
-  <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">-->
-
-  <!--link for the accessing the fontawesome code from the internet.-->
-  <!--<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"-->
-          <!--integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"-->
-          <!--crossorigin="anonymous"></script>-->
-
-
-
-  <!--<script type="text/javascript" src="libs/jquery.slimscroll.min.js"></script>-->
-
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="manifest" href="firebasemanifest.json">
-  <meta name="theme-color" content="#1976d2">
-<link rel="stylesheet" href="styles.c184f368ab2b4dfef778.css"></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Guessing Game with Hints</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #word-display {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #hint {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        #input-container {
+            margin-top: 20px;
+        }
+        #guess-input {
+            padding: 5px;
+            font-size: 18px;
+        }
+        #guess-button {
+            padding: 5px 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
 <body>
-  <us-root></us-root>
+    <h1>Word Guessing Game with Hints</h1>
+    <div id="hint"></div>
+    <div id="word-display"></div>
+    <div id="input-container">
+        <input type="text" id="guess-input" placeholder="Enter a letter">
+        <button id="guess-button">Guess</button>
+    </div>
+    <p id="message"></p>
 
-  <!-- for IRMA -->
-  <script type="text/javascript" src="assets/js/irma.js" defer=""></script>
+    <script>
+        const wordsWithHints = [
+            { word: "apple", hint: "A fruit that's red or green" },
+            { word: "banana", hint: "A long, yellow fruit" },
+            { word: "cherry", hint: "Small, round, and red" },
+            { word: "grape", hint: "A small fruit that grows in clusters" },
+            { word: "kiwi", hint: "A small, fuzzy fruit with green flesh" },
+            { word: "orange", hint: "A citrus fruit with a bright color" },
+            { word: "pear", hint: "A fruit that's shaped like a teardrop" }
+        ];
+        let word = "";
+        let hint = "";
+        let guessedWord = [];
+        let remainingAttempts = 6;
 
+        function chooseRandomWord() {
+            const randomIndex = Math.floor(Math.random() * wordsWithHints.length);
+            const selectedWord = wordsWithHints[randomIndex];
+            word = selectedWord.word;
+            hint = selectedWord.hint;
+            guessedWord = new Array(word.length).fill('_');
+            remainingAttempts = 6;
+            updateHint();
+            updateWordDisplay();
+            updateMessage("");
+        }
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js"></script>
+        function updateHint() {
+            document.getElementById("hint").textContent = `Hint: ${hint}`;
+        }
 
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
-<script type="text/javascript" src="runtime.65c5ac524fe01f4e8e3d.js"></script><script type="text/javascript" src="polyfills.b6ff5dbc46d432ea5d73.js"></script><script type="text/javascript" src="scripts.54b900d40a93171431d6.js"></script><script type="text/javascript" src="main.850f547b4223177ecd2a.js"></script></body>
+        function updateWordDisplay() {
+            document.getElementById("word-display").textContent = guessedWord.join(' ');
+        }
+
+        function updateMessage(message) {
+            document.getElementById("message").textContent = message;
+        }
+
+        function guessLetter() {
+            const guessInput = document.getElementById("guess-input");
+            const guess = guessInput.value.toLowerCase();
+            guessInput.value = '';
+
+            if (guess.length !== 1 || !guess.match(/[a-z]/)) {
+                updateMessage("Please enter a single letter.");
+                return;
+            }
+
+            if (word.includes(guess)) {
+                for (let i = 0; i < word.length; i++) {
+                    if (word[i] === guess) {
+                        guessedWord[i] = guess;
+                    }
+                }
+                updateWordDisplay();
+            } else {
+                remainingAttempts--;
+            }
+
+            if (remainingAttempts === 0) {
+                updateMessage(`You lost. The word was "${word}".`);
+                disableGuessing();
+            } else if (guessedWord.join('') === word) {
+                updateMessage("Congratulations! You guessed the word.");
+                disableGuessing();
+            } else {
+                updateMessage(`Remaining attempts: ${remainingAttempts}`);
+            }
+        }
+
+        function disableGuessing() {
+            document.getElementById("guess-input").setAttribute("disabled", "true");
+            document.getElementById("guess-button").setAttribute("disabled", "true");
+        }
+
+        document.getElementById("guess-button").addEventListener("click", guessLetter);
+        chooseRandomWord();
+    </script>
+</body>
 </html>
